@@ -194,18 +194,18 @@ ul {
 
       <div class="cards__card card">
         <h2 class="card__heading">Pro</h2>
-        <p class="card__price">$19.99</p>
+        <p class="card__price">₹19.99</p>
         <ul role="list" class="card__bullets flow">
           <li>Access to advanced workouts and nutrition plans</li>
           <li>Priority Email support</li>
           <li>Exclusive access to live Q&A sessions</li>
         </ul>
-        <a href="" class="card__cta cta">Upgrade to Pro</a>
+        <a href="6353074867@fam" class="card__cta cta">Upgrade to Pro</a>
       </div>
 
       <div class="cards__card card">
              <h2 class="card__heading">Pro</h2>
-        <p class="card__price">$1<h29.99</p>
+        <p class="card__price">₹129.99</p>
         <ul role="list" class="card__bullets flow">
           <li>Access to advanced workouts and nutrition plans</li>
           <li>Priority Email support</li>
@@ -216,7 +216,7 @@ ul {
 
       <div class="cards__card card">
         <h2 class="card__heading">Ultimate</h2>
-        <p class="card__price">$29.99</p>
+        <p class="card__price">₹29.99</p>
         <ul role="list" class="card__bullets flow">
           <li>Access to all premium workouts and nutrition plans</li>
           <li>24/7 Priority support</li>
