@@ -1,88 +1,232 @@
+<style>
+    }
 
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-    <style>
-        /* styles.css */
+html,
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: silver;
+  height: 100%;
+  min-height: 100vh;
 }
 
-.warning-container {
-    text-align: center;
+body {
+  display: grid;
+  place-items: center;
+  font-family: "League Spartan", system-ui, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  background-color: #212121;
+  color: #ddd;
 }
 
-.warning-logo {
-    background-image: url('warning-icon.png');
-    background-size: contain;
-    width: 100px;
-    height: 150px;
-    margin: 0 auto 20px;
+ul {e Spartan", system-ui, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  background-color: #212121;
+  color: #ddd;
+}
+ul {e Spartan", system-ui, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  background-color: #212121;
+  color: #ddd;
 }
 
-.warning-message {
-    color: red;
-    font-size: 45px;
-    font-weight: bold;
-    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+ul {e Spartan", system-ui, sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.2;
+  background-color: #212121;
+  color: #ddd;
 }
 
-.timer {
-    font-size: 63px;
-    margin: 20px 0;
+ul {
+  list-style: none;
 }
 
-button {
-    padding: 10px 20px;
-    height: 40px;
-    background-color: blue;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    display: none;
+.main {
+  max-width: 75rem;
+  padding: 3em 1.5em;
 }
 
-button:hover {
-    background-color: blue;
+.main__heading {
+  font-weight: 600;
+  font-size: 2.25em;
+  margin-bottom: 0.75em;
+  text-align: center;
+  color: #eceff1;
 }
 
-    </style>
-    <div class="warning-container">
-        <div class="warning-logo"></div>
-        <h1 class="warning-message">Please Enable Desktop Mode in Your Browser Then Click To Continue</h1>
-        <div id="timer" class="timer">5</div>
-        <button id="continue-button" class="hidden">Continue</button>
+.cards {
+  position: relative;
+}
+
+.cards__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em;
+}
+
+.card {
+  --flow-space: 0.5em;
+  --hsl: var(--hue), var(--saturation), var(--lightness);
+  flex: 1 1 14rem;
+  padding: 1.5em 2em;
+  display: grid;
+  grid-template-rows: auto auto auto 1fr;
+  align-items: start;
+  gap: 1.25em;
+  color: #eceff1;
+  background-color: #2b2b2b;
+  border: 1px solid #eceff133;
+  border-radius: 15px;
+}
+
+.card:nth-child(1) {
+  --hue: 165;
+  --saturation: 82.26%;
+  --lightness: 51.37%;
+}
+
+.card:nth-child(2) {
+  --hue: 291.34;
+  --saturation: 95.9%;
+  --lightness: 61.76%;
+}
+.card:nth-child(3) {
+  --hue: 338.69;
+  --saturation: 100%;
+  --lightness: 48.04%;
+}
+
+.card__bullets {
+  line-height: 1.4;
+}
+
+.card__bullets li::before {
+  display: inline-block;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
+  transform: translatey(0.25ch);
+  margin-right: 1ch;
+}
+
+.card__heading {
+  font-size: 1.05em;
+  font-weight: 600;
+}
+.card__price {
+  font-size: 1.75em;
+  font-weight: 700;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1.25em);
+}
+
+.cta {
+  display: block;
+  align-self: end;
+  margin: 1em 0 0.5em 0;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #0d0d0d;
+  padding: 0.7em;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  user-select: none;
+  opacity: var(--opacity, 0);
+  -webkit-mask: radial-gradient(
+    25rem 25rem at var(--x) var(--y),
+    #000 1%,
+    transparent 50%
+  );
+  mask: radial-gradient(
+    25rem 25rem at var(--x) var(--y),
+    #000 1%,
+    transparent 50%
+  );
+  transition: 400ms mask ease;
+  will-change: mask;
+}
+.overlay .card {
+  background-color: hsla(var(--hsl), 0.15);
+  border-color: hsla(var(--hsl), 1);
+  box-shadow: 0 0 0 1px inset hsl(var(--hsl));
+}
+
+.overlay .cta {
+  display: block;
+  grid-row: -1;
+  width: 100%;
+  background-color: hsl(var(--hsl));
+  box-shadow: 0 0 0 1px hsl(var(--hsl));
+}
+
+:not(.overlay) > .card {
+  transition: 400ms background ease;
+  will-change: background;
+}
+
+:not(.overlay) > .card:hover {
+  --lightness: 95%;
+  background: hsla(var(--hsl), 0.1);
+}
+
+  
+</style>
+<main class="main flow">
+  <h1 class="main__heading">Pricing</h1>
+  <div class="main__cards cards">
+    <div class="cards__inner">
+      <div class="cards__card card">
+        <h2 class="card__heading">Basic</h2>
+        <p class="card__price">$9.99</p>
+        <ul role="list" class="card__bullets flow">
+          <li>Access to standard workouts and nutrition plans</li>
+          <li>Email support</li>
+        </ul>
+        <a href="#basic" class="card__cta cta">Get Started</a>
+      </div>
+
+      <div class="cards__card card">
+        <h2 class="card__heading">Pro</h2>
+        <p class="card__price">$19.99</p>
+        <ul role="list" class="card__bullets flow">
+          <li>Access to advanced workouts and nutrition plans</li>
+          <li>Priority Email support</li>
+          <li>Exclusive access to live Q&A sessions</li>
+        </ul>
+        <a href="" class="card__cta cta">Upgrade to Pro</a>
+      </div>
+
+      <div class="cards__card card">
+             <h2 class="card__heading">Pro</h2>
+        <p class="card__price">$1<h29.99</p>
+        <ul role="list" class="card__bullets flow">
+          <li>Access to advanced workouts and nutrition plans</li>
+          <li>Priority Email support</li>
+          <li>Exclusive access to live Q&A sessions</li>
+        </ul>
+        <a href="#pro" class="card__cta cta">Upgrade to Pro</a>
+      </div>
+
+      <div class="cards__card card">
+        <h2 class="card__heading">Ultimate</h2>
+        <p class="card__price">$29.99</p>
+        <ul role="list" class="card__bullets flow">
+          <li>Access to all premium workouts and nutrition plans</li>
+          <li>24/7 Priority support</li>
+          <li>1-on-1 virtual coaching session every month</li>
+          <li>Exclusive content and early access to new features</li>
+        </ul>
+        <a href="#ultimate" class="card__cta cta">Go Ultimate</a>
+      </div>
     </div>
-
-    <script>
-        // script.js
-document.addEventListener("DOMContentLoaded", function () {
-    let countdown = 10;
-
-    const timerElement = document.getElementById("timer");
-    const continueButton = document.getElementById("continue-button");
-
-    const timerInterval = setInterval(function () {
-        countdown--;
-        timerElement.textContent = countdown;
-        if (countdown === 0) {
-            clearInterval(timerInterval);
-            continueButton.style.display = "block";
-        }
-    }, 1000);
-
-    continueButton.addEventListener("click", function () {
-        window.location.href = "secondPage.html";
-    });
-});
-
-    </script>
+    
+    <div class="overlay cards__inner"></div>
+  </div>
+</main>
