@@ -1,232 +1,130 @@
-<style>
-    }
-
-html,
-body {
-  height: 100%;
-  min-height: 100vh;
-}
-
-body {
-  display: grid;
-  place-items: center;
-  font-family: "League Spartan", system-ui, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.2;
-  background-color: #212121;
-  color: #ddd;
-}
-
-ul {e Spartan", system-ui, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.2;
-  background-color: #212121;
-  color: #ddd;
-}
-ul {e Spartan", system-ui, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.2;
-  background-color: #212121;
-  color: #ddd;
-}
-
-ul {e Spartan", system-ui, sans-serif;
-  font-size: 1.1rem;
-  line-height: 1.2;
-  background-color: #212121;
-  color: #ddd;
-}
-
-ul {
-  list-style: none;
-}
-
-.main {
-  max-width: 75rem;
-  padding: 3em 1.5em;
-}
-
-.main__heading {
-  font-weight: 600;
-  font-size: 2.25em;
-  margin-bottom: 0.75em;
-  text-align: center;
-  color: #eceff1;
-}
-
-.cards {
-  position: relative;
-}
-
-.cards__inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2.5em;
-}
-
-.card {
-  --flow-space: 0.5em;
-  --hsl: var(--hue), var(--saturation), var(--lightness);
-  flex: 1 1 14rem;
-  padding: 1.5em 2em;
-  display: grid;
-  grid-template-rows: auto auto auto 1fr;
-  align-items: start;
-  gap: 1.25em;
-  color: #eceff1;
-  background-color: #2b2b2b;
-  border: 1px solid #eceff133;
-  border-radius: 15px;
-}
-
-.card:nth-child(1) {
-  --hue: 165;
-  --saturation: 82.26%;
-  --lightness: 51.37%;
-}
-
-.card:nth-child(2) {
-  --hue: 291.34;
-  --saturation: 95.9%;
-  --lightness: 61.76%;
-}
-.card:nth-child(3) {
-  --hue: 338.69;
-  --saturation: 100%;
-  --lightness: 48.04%;
-}
-
-.card__bullets {
-  line-height: 1.4;
-}
-
-.card__bullets li::before {
-  display: inline-block;
-  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' width='16' title='check' fill='%23dddddd'%3E%3Cpath d='M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z' /%3E%3C/svg%3E");
-  transform: translatey(0.25ch);
-  margin-right: 1ch;
-}
-
-.card__heading {
-  font-size: 1.05em;
-  font-weight: 600;
-}
-.card__price {
-  font-size: 1.75em;
-  font-weight: 700;
-}
-
-.flow > * + * {
-  margin-top: var(--flow-space, 1.25em);
-}
-
-.cta {
-  display: block;
-  align-self: end;
-  margin: 1em 0 0.5em 0;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  background-color: #0d0d0d;
-  padding: 0.7em;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: 600;
-}
-.overlay {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  user-select: none;
-  opacity: var(--opacity, 0);
-  -webkit-mask: radial-gradient(
-    25rem 25rem at var(--x) var(--y),
-    #000 1%,
-    transparent 50%
-  );
-  mask: radial-gradient(
-    25rem 25rem at var(--x) var(--y),
-    #000 1%,
-    transparent 50%
-  );
-  transition: 400ms mask ease;
-  will-change: mask;
-}
-.overlay .card {
-  background-color: hsla(var(--hsl), 0.15);
-  border-color: hsla(var(--hsl), 1);
-  box-shadow: 0 0 0 1px inset hsl(var(--hsl));
-}
-
-.overlay .cta {
-  display: block;
-  grid-row: -1;
-  width: 100%;
-  background-color: hsl(var(--hsl));
-  box-shadow: 0 0 0 1px hsl(var(--hsl));
-}
-
-:not(.overlay) > .card {
-  transition: 400ms background ease;
-  will-change: background;
-}
-
-:not(.overlay) > .card:hover {
-  --lightness: 95%;
-  background: hsla(var(--hsl), 0.1);
-}
-
-  
-</style>
-<main class="main flow">
-  <h1 class="main__heading">Pricing</h1>
-  <div class="main__cards cards">
-    <div class="cards__inner">
-      <div class="cards__card card">
-        <h2 class="card__heading">Basic</h2>
-        <p class="card__price">$9.99</p>
-        <ul role="list" class="card__bullets flow">
-          <li>Access to standard workouts and nutrition plans</li>
-          <li>Email support</li>
-        </ul>
-        <a href="#basic" class="card__cta cta">Get Started</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">Pro</h2>
-        <p class="card__price">₹19.99</p>
-        <ul role="list" class="card__bullets flow">
-          <li>Access to advanced workouts and nutrition plans</li>
-          <li>Priority Email support</li>
-          <li>Exclusive access to live Q&A sessions</li>
-        </ul>
-        <a href="6353074867@fam" class="card__cta cta">Upgrade to Pro</a>
-      </div>
-
-      <div class="cards__card card">
-             <h2 class="card__heading">Pro</h2>
-        <p class="card__price">₹129.99</p>
-        <ul role="list" class="card__bullets flow">
-          <li>Access to advanced workouts and nutrition plans</li>
-          <li>Priority Email support</li>
-          <li>Exclusive access to live Q&A sessions</li>
-        </ul>
-        <a href="#pro" class="card__cta cta">Upgrade to Pro</a>
-      </div>
-
-      <div class="cards__card card">
-        <h2 class="card__heading">Ultimate</h2>
-        <p class="card__price">₹29.99</p>
-        <ul role="list" class="card__bullets flow">
-          <li>Access to all premium workouts and nutrition plans</li>
-          <li>24/7 Priority support</li>
-          <li>1-on-1 virtual coaching session every month</li>
-          <li>Exclusive content and early access to new features</li>
-        </ul>
-        <a href="#ultimate" class="card__cta cta">Go Ultimate</a>
-      </div>
-    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration & Login</title>
     
-    <div class="overlay cards__inner"></div>
-  </div>
-</main>
+</head>
+<body>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    background-position: center;
+    background-size: cover;
+    background-color: #1a1a1a;
+}
+
+form {
+    width: 250px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: silver;
+}
+
+input {
+    width: 100%;
+    padding: 05px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: 2px solid #3498db;
+    color: #3498db;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+p{
+    color: red;
+    font-size: 10px;
+}
+    </style>
+    <div class="container" style="background-image: url('crew-data-center-cyber-security-team-computer-engineers-working-double-exposure-blurry-interface-concept-protection-164673298.webp')">
+        <!-- Registration Form -->
+        <form id="registration-form">
+            <h2>Register Your Id</h2>
+            <input type="text" id="register-username" placeholder="Username" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <p>0-9 Any Number In 8 Digits Password</p>
+            <button type="button" onclick="register()">Register</button>
+
+        </form>
+        
+        <!-- Login Form -->
+        <form id="login-form" style="display: none;">
+            <h2>confirm Login</h2>
+            <input type="text" id="login-username" placeholder="Username" required>
+            <input type="password" id="login-password" placeholder="Password" required>
+           <center><button type="button" onclick="login()">Login</button>
+     
+
+    <script>
+     // Mock database (replace with real database in real-world applications)
+let users = {};
+
+function register() {
+    let username = document.getElementById('register-username').value;
+    let password = document.getElementById('register-password').value;
+
+    // Check if the user already exists
+    if (users[username]) {
+        alert('User already exists!');
+    } else {
+        // Check if the password is strong
+        if (isStrongPassword(password)) {
+            users[username] = password;
+            alert('Registration successful!');
+            
+            // Switch to login form
+            document.getElementById('registration-form').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        } else {
+            alert('Please enter a strong password.');
+        }
+    }
+}
+
+function isStrongPassword(password) {
+    var regex = /^[0-9@$!%*?&]{8}$/;
+
+
+    // Test the password against the regex
+    return regex.test(password);
+}
+function login() {
+    let username = document.getElementById('login-username').value;
+    let password = document.getElementById('login-password').value;
+
+    if (users[username] && users[username] === password) {
+        window.location.href = 'welcome.html'; // Redirect to second page
+    } else {
+        alert('Invalid credentials or user not found!');
+    }
+}
+
+    </script>
