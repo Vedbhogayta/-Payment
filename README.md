@@ -1,130 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration & Login</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=B612+Mono:wght@700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <title>Bootstrap Navbar Example</title>
 </head>
+
 <body>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #1a1a1a;
-}
-
-.container {
-    width: 100vw;
-    height: 100vh;
-    display: flex;  
-    align-items: center;
-    justify-content: center;
-    background-position: center;
-    background-size: cover;
-    background-color: #1a1a1a;
-}
-
-form {
-    width: 250px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    background-color: silver;
-}
-
-input {
-    width: 100%;
-    padding: 05px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    border: 2px solid #3498db;
-    color: #3498db;
-    background-color: #fff;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-button:hover {
-    background-color: #3498db;
-    color: #fff;
-}
-p{
-    color: red;
-    font-size: 10px;
-}
+         *{
+            font-family: 'Poppins', sans-serif;
+           } 
+           .h-font{
+            font-family: 'B612 Mono', monospace;
+           }
     </style>
-    <div class="container" style="background-image: url('Offshore-Software-Development-Best-Practices-.jpg')">
-        <!-- Registration Form -->
-        <form id="registration-form">
-            <h2>Register Your Id</h2>
-            <input type="text" id="register-username" placeholder="Username" required>
-            <input type="password" id="register-password" placeholder="Password" required>
-            <p>0-9 Any Number In 8 Digits Password</p>
-            <button type="button" onclick="register()">Register</button>
 
-        </form>
-        
-        <!-- Login Form -->
-        <form id="login-form" style="display: none;">
-            <h2>confirm Login</h2>
-            <input type="text" id="login-username" placeholder="Username" required>
-            <input type="password" id="login-password" placeholder="Password" required>
-           <center><button type="button" onclick="login()">Login</button>
-     
-
-    <script>
-     // Mock database (replace with real database in real-world applications)
-let users = {};
-
-function register() {
-    let username = document.getElementById('register-username').value;
-    let password = document.getElementById('register-password').value;
-
-    // Check if the user already exists
-    if (users[username]) {
-        alert('User already exists!');
-    } else {
-        // Check if the password is strong
-        if (isStrongPassword(password)) {
-            users[username] = password;
-            alert('Registration successful!');
+<nav class="navbar navbar-expand-lg navbar-light bg-white px-lg-3 py-lg-2 shadow-sm sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand me-5 fw-bold fs-3 h-font" href="">CONSIL HOTEL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" href="#">Room</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" href="#">Facilities</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link me-2" href="#">Contact us</a>
+          </li>
+         
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+          </li>
+        </ul>
+       <br><br> <div class="d-flex">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login">
+            Login
+          </button>          
+        </div>
+      </div>
+    </div>
+  </nav>
+ 
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
             
-            // Switch to login form
-            document.getElementById('registration-form').style.display = 'none';
-            document.getElementById('login-form').style.display = 'block';
-        } else {
-            alert('Please enter a strong password.');
-        }
-    }
-}
+    <!-- Bootstrap JS and dependencies (jQuery and Popper.js) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-function isStrongPassword(password) {
-    var regex = /^[0-9@$!%*?&]{8}$/;
+</body>
 
-
-    // Test the password against the regex
-    return regex.test(password);
-}
-function login() {
-    let username = document.getElementById('login-username').value;
-    let password = document.getElementById('login-password').value;
-
-    if (users[username] && users[username] === password) {
-        window.location.href = 'welcome.html'; // Redirect to second page
-    } else {
-        alert('Invalid credentials or user not found!');
-    }
-}
-
-    </script>
+</html>
